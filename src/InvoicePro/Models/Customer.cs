@@ -18,8 +18,8 @@ namespace InvoicePro.Models
         [Display(Name = "Company Number")]
         public string CompanyNumber { get; set; }
 
-        [Required(ErrorMessage = "Name Required")]
-        [Display(Name = "Name")]
+        [Required(ErrorMessage = "Address Required")]
+        [Display(Name = "Address")]
         public string Address { get; set; }
 
         [Required(ErrorMessage = "Zip Code Required")]
@@ -38,14 +38,14 @@ namespace InvoicePro.Models
         [Display(Name = "Phone")]
         public string Phone1 { get; set; }
 
-        [Required(ErrorMessage = "Mobile Required")]
-        [Display(Name = "Mobile")]
+        [Required(ErrorMessage = "Mobile Phone Required")]
+        [Display(Name = "Mobile Phone")]
         public string Phone2 { get; set; }
 
         public string Fax { get; set; }
 
         [Required(ErrorMessage = "Email Required")]
-        //[RegularExpression(@"\@w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Wrong email format")]
+        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Wrong email format")]
         public string Email { get; set; }
         public string Notes { get; set; }
         //public virtual ICollection<Invoices> {get; set;} 
